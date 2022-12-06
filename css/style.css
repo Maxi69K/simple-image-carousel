@@ -1,0 +1,150 @@
+/*   random images:      https://source.unsplash.com/random    */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* font-family: 'Poppins', sans-serif; */
+
+/**********************************************
+                Global styles
+**********************************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/**********************************************
+                Specific styles
+**********************************************/
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 2rem 0;
+  font-weight: 100;
+}
+
+:root {
+  --prim-c: #fff;
+  --sec-c: #717171;
+  --trans-speed: .5s;
+}
+
+.slides-container {
+  max-width: 700px;
+  position: relative;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+.slide {
+  display: none;
+}
+
+.prev-btn,
+.next-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -2rem;
+  padding: 1rem;
+  color: var(--prim-c);
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 1.2rem;
+  border-radius: 0 3px 3px 0;
+  transition: var(--trans-speed) ease-in-out;
+}
+
+.next-btn {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background-color: rgba(0, 0, 0, .65);
+}
+
+.prev-btn:active,
+.next-btn:active {
+  color: var(--sec-c);
+}
+
+.text {
+  position: absolute;
+  bottom: 6px;
+  padding: 10px 3px;
+  color: var(--prim-c);
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.number-text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, .5);
+  color: var(--prim-c);
+  border-radius: 50%;
+}
+
+.dots-container {
+  text-align: center;
+}
+
+.dot {
+  display: inline-block;
+  cursor: pointer;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  margin: 0 2px;
+  background-color: #ddd;
+  transition: background-color var(--trans-speed) ease-out;
+}
+
+.active,
+.dot:hover {
+  background-color: var(--sec-c);
+}
+
+.dot:active {
+  transform: scale(.8);
+}
+
+.fade {
+  animation: fade var(--trans-speed) ease-out;
+}
+
+@keyframes fade {
+  from {
+    opacity: .2;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/**************************************
+            @media Queries
+**************************************/
+
+@media all and (min-width: 576px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
